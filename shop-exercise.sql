@@ -1,0 +1,49 @@
+-- create database
+-- CREATE DATABASE shop;
+-- create and configure table
+-- CREATE TABLE products(
+--     product_name VARCHAR(200),
+--     -- 8.99, 12345.99
+--     price NUMERIC(10, 2),
+--     description TEXT,
+--     amount_in_stock SMALLINT,
+--     -- uploads/images/products/some-products.jpg is what this might look like
+--     image_path VARCHAR(500)
+-- )
+-- insert into table products
+-- INSERT INTO products(
+--         product_name,
+--         price,
+--         description,
+--         amount_in_stock,
+--         image_path
+--     )
+-- VALUES(
+--         'cookie',
+--         2.99,
+--         'really good cookie',
+--         3,
+--         'uploads/images/products/cookie.jpg'
+--     ) -- 
+-- add constraints
+-- ALTER TABLE products
+-- MODIFY COLUMN product_name VARCHAR(200) NOT NULL,
+--     MODIFY COLUMN price NUMERIC(10, 2) NOT NULL CHECK(price > 0),
+--     MODIFY COLUMN description TEXT NOT NULL,
+--     MODIFY COLUMN amount_in_stock SMALLINT CHECK(amount_in_stock >= 0); -- MySQL
+-- ALTER TABLE products
+-- ALTER COLUMN product_name
+-- SET NOT NULL,
+--     ALTER COLUMN price
+-- SET NOT NULL,
+--     ALTER COLUMN description
+-- SET NOT NULL,
+--     ADD CONSTRAINT price_positive CHECK (price > 0),
+--     ADD CONSTRAINT amount_in_stock_positive CHECK (price >= 0);
+-- PostgreSQL
+-- add in a column mysql
+-- ALTER TABLE products
+-- ADD COLUMN id INT PRIMARY KEY AUTO_INCREMENT;
+-- add in a column postgresql
+ALTER TABLE products
+ADD COLUMN id SERIAL PRIMARY KEY;

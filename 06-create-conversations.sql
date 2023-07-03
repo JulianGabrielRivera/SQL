@@ -5,5 +5,5 @@ CREATE TABLE conversations (
     employer_name VARCHAR(250),
     -- no limit to message length
     message TEXT,
-    data_sent TIMESTAMP
+    data_sent TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
